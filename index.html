@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./idea.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="container">
+      <div class="title">
+        <h1>cruds</h1>
+        <p>Create Read update delete search</p>
+      </div>
+      <div class="inputs">
+        <input type="text" name="title" id="title" placeholder="Enter Title" />
+        <div class="prices">
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Enter Price"
+            onkeyup="totalPrice()"
+          />
+          <input
+            type="number"
+            name="taxes"
+            id="taxes"
+            onkeyup="totalPrice()"
+            placeholder="Enter Taxes"
+          />
+          <input
+            type="number"
+            name="ads"
+            onkeyup="totalPrice()"
+            id="ads"
+            placeholder="Enter Ads Cost"
+          />
+          <input
+            type="number"
+            name="discount"
+            onkeyup="totalPrice()"
+            id="discount"
+            placeholder="Enter Discount"
+          />
+          <div id="total" style="background-color: #f95757">0$</div>
+        </div>
+        <input
+          type="number"
+          name="count"
+          id="count"
+          placeholder="Enter Count"
+        />
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="Category"
+        />
+        <button type="submit" id="create" onclick="getData()">Create</button>
+      </div>
+      <div class="search">
+        <input type="search" name="search" id="search" placeholder="Search" />
+        <button id="srcCat" class="search">Search by Category</button>
+        <button id="srcTitle"  class="search">Search by Title</button>
+      </div>
+      <button type="button" id="deleteAll"></button>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+            <th>CATEGORY</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
